@@ -1,0 +1,28 @@
+# Define the graph as an adjacency list
+graph = {
+    '5': ['3', '7'],
+    '3': ['2', '4'],
+    '7': ['8'],
+    '2': [],
+    '4': ['8'],
+    '8': []
+}
+
+# Initialize a set to keep track of visited nodes
+visited = set()
+
+# Define the DFS function
+def dfs(visited, graph, node):
+    # Check if the node has not been visited
+    if node not in visited:
+        # Print the current node being visited
+        print(f"Visiting node: {node}")
+        # Mark the node as visited
+        visited.add(node)
+        # Recursively visit all the neighbors of the current node
+        for neighbour in graph[node]:
+            dfs(visited, graph, neighbour)
+
+# Start the DFS traversal from node '5'
+print("Following is the Depth-First Search:")
+dfs(visited, graph, '5')
