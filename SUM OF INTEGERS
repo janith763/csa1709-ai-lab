@@ -1,0 +1,6 @@
+def sum_integers(n):
+    return n * (n + 1) // 2
+
+# Example usage
+N = 10
+print(sum_integers(N))  # Output: 55
