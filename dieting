@@ -1,11 +1,17 @@
-% Define specific diets for different diseases
-diet_for(diabetes, low_carb_diet).
-diet_for(hypertension, low_sodium_diet).
-diet_for(obesity, low_calorie_diet).
-diet_for(heart_disease, low_saturated_fat_diet).
-diet_for(allergies, gluten_free_diet).
-diet_for(general_health, balanced_diet).
+ # Define specific diets for different diseases
+diet_for = {
+    'diabetes': 'low_carb_diet',
+    'hypertension': 'low_sodium_diet',
+    'obesity': 'low_calorie_diet',
+    'heart_disease': 'low_saturated_fat_diet',
+    'allergies': 'gluten_free_diet',
+    'general_health': 'balanced_diet'
+}
 
-% Rules to suggest a diet based on a specific disease
-suggest_diet(Disease, Diet) :-
-    diet_for(Disease, Diet).
+# Function to suggest a diet based on a specific disease
+def suggest_diet(disease):
+    return diet_for.get(disease, "Diet not found for the specified disease.")
+
+# Example usage
+print(suggest_diet('diabetes'))  # Output: low_carb_diet
+print(suggest_diet('unknown'))    # Output: Diet not found for the specified disease.
